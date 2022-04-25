@@ -13,9 +13,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
 ]
-
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  // 修改vue子应用的路由都以/vue开头
+  history: createWebHistory("/vue"),
   routes
 })
 
