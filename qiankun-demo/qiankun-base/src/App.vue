@@ -1,9 +1,14 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div>
+    <el-menu :router="true" mode="horizontal">
+      <el-menu-item index="/">首页</el-menu-item>
+      <el-menu-item index="/vue">vue应用</el-menu-item>
+      <el-menu-item index="/react">react应用</el-menu-item>
+    </el-menu>
+    <router-view v-show="$route.name"></router-view>
+    <div v-show="!$route.name" id="vue"></div>
+    <div v-show="!$route.name" id="react"></div>
   </div>
-  <router-view/>
 </template>
 
 <style>
